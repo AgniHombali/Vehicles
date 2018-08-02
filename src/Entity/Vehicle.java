@@ -2,23 +2,30 @@ package Entity;
 import java.util.Objects;
 
 public abstract class Vehicle {
-    private long VehicleType;
-    private String Name;
-
-    public long getType() {
-        return VehicleType;
+    private String vehicleType;
+    private String name;
+    private String year;
+    public String getType() {
+        return vehicleType;
     }
 
-    public void setType(long VehicleType) {
-        this.VehicleType = VehicleType;
+    public void setType(String vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
     }
 
     @Override
@@ -26,21 +33,21 @@ public abstract class Vehicle {
         if (this == o) return true;
         if (!(o instanceof Vehicle)) return false;
         Vehicle vehicle = (Vehicle) o;
-        return VehicleType == vehicle.VehicleType &&
-                Objects.equals(Name, vehicle.Name);
+        return Objects.equals(vehicleType, vehicle.vehicleType) &&
+                Objects.equals(name, vehicle.name) && (Objects.equals(year, vehicle.year)) ;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(VehicleType, Name);
+        return Objects.hash(vehicleType, name,year);
     }
 
     @Override
     public String toString() {
         return "Vehicle{" +
-                "Vehicle Type=" + VehicleType +
-                ", Name='" + Name + '\'' +
-                '}';
+                "Vehicle Type=" + vehicleType +
+                ", Name='" + name + '\'' +
+                "Year=" + year;
     }
 }

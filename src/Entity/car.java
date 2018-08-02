@@ -1,57 +1,66 @@
 package Entity;
 import java.util.Objects;
-public class car extends Vehicle {
-	private String Company;
-    private int year ;
-    private String Varient;
-
+public class Car extends Vehicle {
+	private String company;
+    private String varient;
+    private String model;
+    private String engineType;
     public String getCompany() {
-        return Company;
+        return company;
     }
 
-    public void setCompany(String Company) {
-        this.Company = Company;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
-    public int getYear() {
-        return year;
+    public String getModel() {
+        return model;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public String getVarient() {
-        return Varient;
+        return varient;
     }
 
-    public void setVarient(String Varient) {
-        this.Varient = Varient;
+    public void setVarient(String varient) {
+        this.varient = varient;
+    }
+    public String getEngineType() {
+        return engineType;
+    }
+
+    public void setEngineType(String engineType) {
+        this.varient = varient;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof car)) return false;
+        if (!(o instanceof Car)) return false;
         if (!super.equals(o)) return false;
-        car car1 = (car) o;
-        return year == car1.year &&
-                Objects.equals(Company, car1.Company) &&
-                Objects.equals(Varient, car1.Varient);
+        Car car1 = (Car) o;
+        return  Objects.equals(model, car1.model) &&
+                Objects.equals(company, car1.company) &&
+                Objects.equals(varient, car1.varient) &&
+                Objects.equals(engineType, car1.engineType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Company, year, Varient);
+        return Objects.hash(super.hashCode(), company, model, varient,engineType);
     }
 
 
     @Override
     public String toString() {
         return "car{" +
-                "Company='" + Company + '\'' +
-                ", year=" + year +
-                ", Varient='" + Varient + '\'' +
+                "Company='" + company + '\'' +
+                ", Model=" + model +
+                ", Varient='" + varient + '\'' +
+                "Engine Type='" + engineType + '\'' +
                 "} " + super.toString();
     }
 

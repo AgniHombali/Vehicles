@@ -1,57 +1,50 @@
 package Entity;
 import java.util.Objects;
-public class bus extends Vehicle {
-	private String Company;
-    private int year ;
-    private String Varient;
+public class Bus extends Vehicle {
+	private String company;
+    private String typeOfBus ;
+    private String typeOfEngine;
 
     public String getCompany() {
-        return Company;
+        return company;
     }
-
-    public void setCompany(String Company) {
-        this.Company = Company;
+    public void setCompany(String company) {
+        this.company = company;
     }
-
-    public int getYear() {
-        return year;
+    public String getTypeOfBus() {
+        return typeOfBus;
     }
-
-    public void setYear(int year) {
-        this.year = year;
+    public void setTypeOfBus(String typeOfBus) {
+        this.typeOfBus = typeOfBus;
     }
-
-    public String getVarient() {
-        return Varient;
+    public String getTypeOfEngine() {
+        return typeOfEngine;
     }
-
-    public void setVarient(String Varient) {
-        this.Varient = Varient;
+    public void setTypeOfEngine(String typeOfEngine) {
+        this.typeOfEngine = typeOfEngine;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof car)) return false;
+        if (!(o instanceof Car)) return false;
         if (!super.equals(o)) return false;
-        bus bus1 = (bus) o;
-        return year == bus1.year &&
-                Objects.equals(Company, bus1.Company) &&
-                Objects.equals(Varient, bus1.Varient);
+        Bus bus1 = (Bus) o;
+        return  Objects.equals(company, bus1.company) &&
+                Objects.equals(typeOfBus, bus1.typeOfBus) &&
+                Objects.equals(typeOfEngine, bus1.typeOfEngine);
     }
-
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Company, year, Varient);
+        return Objects.hash(super.hashCode(), company, typeOfBus, typeOfEngine);
     }
 
 
     @Override
     public String toString() {
         return "bus{" +
-                "Company='" + Company + '\'' +
-                ", year=" + year +
-                ", Varient='" + Varient + '\'' +
+                "Company='" + company + '\'' +
+                " Type of Bus=" + typeOfBus +
+                " Type of Engine='" + typeOfEngine + '\'' +
                 "} " + super.toString();
     }
 

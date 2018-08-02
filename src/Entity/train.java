@@ -1,57 +1,56 @@
 package Entity;
 import java.util.Objects;
-public class train extends Vehicle {
-	private String Company;
-    private int year ;
-    private String Varient;
+public class Train extends Vehicle {
+	private String company;
+    private String typeOfTrain ;
+    private String typeOfTrainEngine;
 
     public String getCompany() {
-        return Company;
+        return company;
     }
 
-    public void setCompany(String Company) {
-        this.Company = Company;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
-    public int getYear() {
-        return year;
+    public String getTypeOfTrain() {
+        return typeOfTrain;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setTypeOfTrain(String typeOfTrain) {
+        this.typeOfTrain = typeOfTrain;
     }
 
-    public String getVarient() {
-        return Varient;
+    public String getTypeOfTrainEngine() {
+        return typeOfTrainEngine;
     }
 
-    public void setVarient(String Varient) {
-        this.Varient = Varient;
+    public void setTypeOfTrainEngine(String typeOfTrainEngine) {
+        this.typeOfTrainEngine = typeOfTrainEngine;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof train)) return false;
+        if (!(o instanceof Train)) return false;
         if (!super.equals(o)) return false;
-        train train1 = (train) o;
-        return year == train1.year &&
-                Objects.equals(Company, train1.Company) &&
-                Objects.equals(Varient, train1.Varient);
+        Train train1 = (Train) o;
+        return  Objects.equals(company, train1.company) &&
+                Objects.equals(typeOfTrain, train1.typeOfTrain) &&
+                Objects.equals(typeOfTrainEngine, train1.typeOfTrainEngine);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Company, year, Varient);
+        return Objects.hash(super.hashCode(), company, typeOfTrain, typeOfTrainEngine);
     }
 
 
     @Override
     public String toString() {
         return "train{" +
-                "Company='" + Company + '\'' +
-                ", year=" + year +
-                ", Varient='" + Varient + '\'' +
+                "Company='" + company + '\'' +
+                ", Type of Train=" + typeOfTrain + 
+                ", Type of Train Engine='" + typeOfTrainEngine + '\'' +
                 "} " + super.toString();
     }
 

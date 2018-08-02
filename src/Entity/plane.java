@@ -1,57 +1,57 @@
 package Entity;
 import java.util.Objects;
-public class plane extends Vehicle {
-	private String Company;
-    private int year ;
-    private String Varient;
+public class Plane extends Vehicle {
+	private String company;
+    private String typeOfPlane ;
+    private String varient;
 
     public String getCompany() {
-        return Company;
+        return company;
     }
 
-    public void setCompany(String Company) {
-        this.Company = Company;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
-    public int getYear() {
-        return year;
+    public String getTypeOfPlane() {
+        return typeOfPlane;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setTypeOfPlane(String typeOfPlane) {
+        this.typeOfPlane = typeOfPlane;
     }
 
     public String getVarient() {
-        return Varient;
+        return varient;
     }
 
     public void setVarient(String Varient) {
-        this.Varient = Varient;
+        this.varient = varient;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof car)) return false;
+        if (!(o instanceof Car)) return false;
         if (!super.equals(o)) return false;
-        plane plane1 = (plane) o;
-        return year == plane1.year &&
-                Objects.equals(Company, plane1.Company) &&
-                Objects.equals(Varient, plane1.Varient);
+        Plane plane1 = (Plane) o;
+        return  Objects.equals(company, plane1.company) &&
+                Objects.equals(typeOfPlane, plane1.typeOfPlane) &&
+                Objects.equals(varient, plane1.varient);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), Company, year, Varient);
+        return Objects.hash(super.hashCode(), company, typeOfPlane, varient);
     }
 
 
     @Override
     public String toString() {
         return "plane{" +
-                "Company='" + Company + '\'' +
-                ", year=" + year +
-                ", Varient='" + Varient + '\'' +
+                "Company='" + company + '\'' +
+                ", Type of Plane=" + typeOfPlane +
+                ", Varient='" + varient + '\'' +
                 "} " + super.toString();
     }
 
