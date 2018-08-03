@@ -1,9 +1,9 @@
 package repository;
 
-import Entity.Vehicle;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import entity.Vehicle;
 
 //There can be different repository for each entities
 public class VehicleRepository {

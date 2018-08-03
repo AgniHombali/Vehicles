@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 import java.util.Objects;
 public class Plane extends Vehicle {
 	private String company;

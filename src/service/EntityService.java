@@ -1,10 +1,11 @@
 package service;
 import java.util.*;
-import Entity.Car;
-import Entity.Plane;
-import Entity.Train;
-import Entity.Vehicle;
-import Entity.Bus;
+
+import entity.Bus;
+import entity.Car;
+import entity.Plane;
+import entity.Train;
+import entity.Vehicle;
 public class EntityService 
 {
 	public void vehicle1()
