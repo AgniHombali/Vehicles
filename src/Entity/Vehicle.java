@@ -9,6 +9,8 @@ public abstract class Vehicle {
         return vehicleType;
     }
 
+    
+    
     public void setType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
